@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        body{
+        
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          
+        }
+        .main{
+            background-color: rgb(179, 121, 233);
+            border-radius: 20px;
+            height: 230px;
+            width: 270px;
+            border: 2px solid black;
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            flex-direction: column;
+        }
+        .calcybtn{
+            background-color: rgb(160, 71, 160);
+            color: rgb(32, 3, 13);
+            height: 36px;
+            width: 56px;
+            border-radius: 10px;
+            font-weight: bold;
+            margin: 1px;
+        }
+        .calcyInput{
+                height: 30px;
+    border-radius: 10px;
+    margin: 5px;
+    /* color: red; */
+    background-color: yellowgreen;
+        }
+        #equL{
+            margin-left: 30%;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>calculator</h1>
+    <div class="main">
+        <input type="text" name="" id="" class="calcyInput" >
+        <div class="buttonns">
+            <button class="calcybtn">9</button>
+            <button class="calcybtn">8</button>
+            <button class="calcybtn">7</button>
+            <button class="calcybtn">+</button>
+            <br>
+            <button class="calcybtn">6</button>
+            <button class="calcybtn">5</button>
+            <button class="calcybtn">4</button>
+            <button class="calcybtn">-</button>
+            <br>
+            <button class="calcybtn">3</button>
+            <button class="calcybtn">2</button>
+            <button class="calcybtn">1</button>
+            <button class="calcybtn">/</button>
+            <br>
+            <button class="calcybtn">Clear</button>
+            <button class="calcybtn">0</button>
+            <button class="calcybtn">*</button>
+            <button class="calcybtn">.</button>
+            <br>
+             <button id="equL" class="calcybtn">=</button>
+        </div>
+    </div>
+    
+    <script>
+        const input = document.querySelector(".calcyInput")
+        const buttons = document.querySelectorAll(".calcybtn")
+        
+        buttons.forEach((btn)=>{
+btn.addEventListener("click",()=>{
+    input.value+=btn.innerText
+   
+    
+
+
+
+
+    // console.log(btn.innerText)
+
+})
+        })
+      
+
+        
+
+    </script>
+</body>
+</html>

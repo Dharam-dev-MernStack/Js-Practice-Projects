@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <style>
+        body{
+        
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+        .main{
+            height: 220px;
+            width: 400px;
+            border: 2px solid black;
+        }
+        .subMain{
+            margin-top: 5px;
+            display: flex ;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo App</h1>
+  <div class="main">
+    <div class="subMain">
+         <input type="text" name="" id="">
+    <button>Add</button>
+    </div>
+ <ul class="todo-list"></ul>
+  </div>
+  <script>
+ 
+    const btn =document.querySelector("button")
+    const inp = document.querySelector("input")
+    const list = document.querySelector(".todo-list")
+   
+    
+    
+
+    btn.addEventListener("click",(e)=>{
+        if(inp.value.trim()==="")
+        return
+      
+     const  li = document.createElement("li")
+        li.innerText=inp.value
+        list.appendChild(li)
+
+
+
+
+         const deltbtn = document.createElement("button")
+    deltbtn.textContent ="X"
+   deltbtn.addEventListener("click",()=>{
+    li.remove()
+   })
+        li.appendChild(deltbtn)
+
+    })
+   
+  
+    
+  </script>
+
+</body>
+</html>

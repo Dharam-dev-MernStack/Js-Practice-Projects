@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital  clock </title>
+    <style>
+        .hclock{
+            padding: 10px;
+            background-color: rgb(233, 156, 156);
+            height: 120px;
+            width: 300px;
+            border: 1px solid saddlebrown;
+            text-align: center;
+           border-radius: 20px;
+        }
+        .headd{
+            color: rgb(43, 1, 1);
+        }
+    </style>
+</head>
+<body>
+   <div class="hclock">
+    <h1 class="headd"></h1>
+
+   </div>
+    <script>
+const headr = document.querySelector(".headd")
+
+ setInterval(() => {
+    const date = new Date()
+    // headr.textContent =date.toLocaleDateString()
+    headr.textContent = "Time : "+ date.toLocaleTimeString() + " "+"Date : "+date.toLocaleDateString()
+    
+}, 1000);
+
+      
+      
+    </script>
+
+</body>
+</html>

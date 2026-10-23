@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wheather App</title>
+</head>
+<style>
+    .card
+    {
+        background:rgb(35, 161, 192);
+        width: 300px;
+        border-radius: 20px;
+        padding: 5px;
+        margin: 5px;
+    }
+</style>
+<body>
+    <div class="card">
+<h1>wheather App</h1>
+<div class="search">
+    <input type="text" id="cityInput" placeholder="enter city name" class="inputt">
+    <button onclick="getwheather()">search</button>
+     <div class="weather" id="weatherBox">
+    <img id="icon" src="">
+    <div class="temp" id="temp">--°C</div>
+    <div class="city" id="cityName">--</div>
+    <p id="desc" style="color:#666;margin:5px 0"></p>
+    <div class="details">
+      <div>
+        <p>Humidity</p>
+        <h4 id="humidity">--%</h4>
+      </div>
+      <div>
+        <p>Wind</p>
+        <h4 id="wind">-- km/h</h4>
+      </div>
+    </div>
+</div>
+    </div>
+
+    <script>
+        async function getwheather(){
+             const url = `https://api.open-meteo.com/v1/forecast?latitude=19.076&longitude=72.8777&current=temperature_2m,relative_humidity_2m,wind_speed_10m&timezone=Asia/Kolkata`;
+            const city = document.getElementById("cityInput").value.trim();
+            if(!city){
+                alert("enter city name ")
+                return;
+            }
+            try {
+                const res = await fetch(url)
+                const data = await res.json()
+                const current = data.current
+                console.log(data ,"datttttt")
+                
+                document.getElementById("temp").innerText = current.temperature_2m + "°C";
+    document.getElementById("humidity").innerText = current.relative_humidity_2m;
+    document.getElementById("wind").innerText = current.wind_speed_10m;
+    document.getElementById("cityName").innerText= "CityName is "+city
+                
+            } catch (error) {
+                console.log(error)
+            }
+
+        }
+    </script>
+    
+</body>
+</html>
